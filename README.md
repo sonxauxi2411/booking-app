@@ -10,7 +10,7 @@ client-app : https://lucent-malabi-c0be79.netlify.app
 admin-app:  https://dulcet-frangollo-9bfe93.netlify.app
 
         user : test@test.com    
-        password : 123456789
+        password : thienlong123
         isAdmin: true
 
        
