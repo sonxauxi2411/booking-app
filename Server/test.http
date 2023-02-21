@@ -1,0 +1,168 @@
+POST http://localhost:5000/api/auth/register HTTP/1.1
+content-type: application/json
+
+{
+    "userName":"sonsss",
+    "fullName":"locsss",
+    "email":"s111111@gmail.com",
+    "password":"1234567890",
+    "phoneNumber":"121321321"
+}
+###
+
+POST http://localhost:5000/api/auth/login HTTP/1.1
+content-type: application/json
+
+{
+ "email":"sonxauxi@gmail.com",
+"password":"1234567890"
+
+}
+
+###
+
+POST http://localhost:5000/api/auth/admin/login HTTP/1.1
+content-type: application/json
+
+{
+ "email":"sonxauxi@gmail.com",
+"password":"1234567890"
+
+}
+
+###
+
+
+GET http://localhost:5000/api/users HTTP/1.1
+content-type: application/json
+
+
+###
+GET http://localhost:5000/api/users/63d5cc93a5c2eff72f54ec54 HTTP/1.1
+content-type: application/json
+
+
+
+
+###
+GET http://localhost:5000/api/hotel/all HTTP/1.1
+content-type: application/json
+
+
+###
+//find count of city
+GET http://localhost:5000/api/hotel/countHotel HTTP/1.1
+content-type: application/json
+
+
+###
+//count type hotel
+GET http://localhost:5000/api/hotel/countType HTTP/1.1
+content-type: application/json
+
+###
+//hotel rating
+GET http://localhost:5000/api/hotel/topRating HTTP/1.1
+content-type: application/json
+
+
+###
+//hotel city search
+GET http://localhost:5000/api/hotel/search?city=da HTTP/1.1
+content-type: application/json
+
+###
+
+GET http://localhost:5000/api/hotel/6311a54a4a642f014234908 HTTP/1.1
+content-type: application/json
+
+###
+DELETE http://localhost:5000/api/hotel/6311bf37f2fce6ea18172fb6 HTTP/1.1
+content-type: application/json
+
+###
+POST http://localhost:5000/api/hotel/add HTTP/1.1
+content-type: application/json
+
+  {
+  "name": "Golden Rose Hotel",
+  "type": "hotel",
+  "city": "Da Nang",
+  "address": "56 Loseby Phường An Hải Bắc, Quận Sơn Trà, Đà Nẵng, Việt Nam",
+  "distance": 200,
+  "photos":["http://res.cloudinary.com/dqmhwqfvz/image/upload/v1675303378/cddunymrzuxz885sx0nb.jpg",
+    "http://res.cloudinary.com/dqmhwqfvz/image/upload/v1675303378/kxu5vdd24rngpkmdzle9.jpg",
+    "http://res.cloudinary.com/dqmhwqfvz/image/upload/v1675303378/gobstrspszoqvz6pjd7s.jpg",
+    "http://res.cloudinary.com/dqmhwqfvz/image/upload/v1675303378/zxasufmewjdcxxckpqfu.jpg",
+    "http://res.cloudinary.com/dqmhwqfvz/image/upload/v1675303379/qmfnwfolqugbi6j5i0xo.jpg"],
+  "rooms" : ["23","22"],
+  "desc": "sadasdasd",
+  "featured": true
+}
+
+
+
+### 
+GET http://localhost:5000/api/room/all HTTP/1.1
+content-type: application/json
+
+###
+
+DELETE http://localhost:5000/api/room/63db59be8cad6052fed13ce1 HTTP/1.1
+content-type: application/json
+
+###
+PUT http://localhost:5000/api/room/63db6adb9e90b04ad41ae6a5 HTTP/1.1
+content-type: application/json
+
+{
+  "title": "tester1"
+}
+
+
+###
+
+GET http://localhost:5000/api/hotel/rooms/6311a54a4a642f0142349086 HTTP/1.1
+content-type: application/json
+
+
+###
+
+POST http://localhost:5000/api/transaction HTTP/1.1
+content-type: application/json
+
+{
+  "userId": "63d5e9c3dd5621d26a1d948a",
+  "hotelId": "6311a54a4a642f0142349086",
+  "rooms": ["200","201"],
+  "dateEnd": "2023-02-02T17:00:00.000Z",
+  "dateStart": "2023-01-31T17:00:00.000Z",
+  "price": 1200,
+  "payment": "Master Card ",
+  "status" : "check out"
+}
+   
+###
+
+
+GET http://localhost:5000/api/transaction/user/63d5e9c3dd5621d26a1d948a HTTP/1.1
+content-type: application/json
+
+
+### 
+GET http://localhost:5000/api/transaction/all HTTP/1.1
+content-type: application/json
+
+###
+
+GET http://localhost:5000/api/transaction/earnings HTTP/1.1
+content-type: application/json
+
+###
+GET http://localhost:5000/api/transaction/avgmonth HTTP/1.1
+content-type: application/json
+
+###
+//find transaction hotelId
+GET http://localhost:5000/api/transaction/hotel/?id=6311a9c64a642f01423490bf&dateStart=2-12-2023&dateEnd=2-16-2023 HTTP/1.1
+content-type: application/json
